@@ -1,9 +1,12 @@
+const mongoose = require('mongoose');
 
-const mongoose=require('mongoose');
-mongoose.connect("mongodb+srv://ictakjobportal:jp1234@cluster0.d2gurng.mongodb.net/TODOAPP?retryWrites=true&w=majority")
-.then(()=>{
-    console.log('Connected to ModgoDB Atlas');
+mongoose.connect("mongodb+srv://ictakjobportal:jp1234@cluster0.d2gurng.mongodb.net/TodoApp2?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
-.catch((e)=>{
-    console.log('Error Connecting to Atlas')
+.then(() => {
+  console.log('Connected to MongoDB');
 })
+.catch((error) => {
+  console.error('Error connecting to MongoDB:', error);
+});
